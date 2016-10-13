@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="cotent" style="flex-direction:column;display:block">
+  <view class="header" style="height:80rpx;background:#11cd6e;color:white;font-size:45rpx;text-align:center;line-height:80rpx;display:block">最新豆瓣电影--{{datetime}}
+  </view>
+  <view wx:for="{{films}}" wx:for-index="key" wx:for-item="value"  class="items" style="height:380rpx;margin-top:5rpx;margin-left:5rpx;margin-right:5rpx;display:block;">
+    <view class="item"  bindtap="detailmovie" id="{{value.id}}" style="margin-buttom:3rpx">
+  	<image class="movieimg" src="{{value.images.medium}}" style="width:300rpx;height:380rpx;float:left"></image>
+  	<view class="movietext" style="background:#f3eade;margin-left:2rpx;width:423rpx;height:380rpx;border-radius:5rpx;float:left;padding-left:15rpx">
+  		<text style="color:#529cd4;font-size:15pt;display:block;margin-top:5rpx;">电影名:{{value.title}}</text>
+  		<text style="color:#ffad43;font-size:13pt;display:block;padding-top:5rpx;">豆瓣评分:{{value.rating.average}}</text>
+  		<view class="mainactor" style="padding-top:5rpx;">
+        <!-- <text style="font-size:13pt;display:block;padding-top:5rpx;">主要演员:{{films.directors[0].name}}</text> -->
+  			<text style="font-size:13pt;display:block;padding-top:5rpx;">主要演员:</text>
+  			<view wx:for="{{value.casts}}" wx:for-index="key" wx:for-item="value" style="font-size:11pt;margin:8rpx;margin-left:60rpx;color:#45b5da">
+         {{key+1}} {{value.name}}
+        </view>
+  		</view>
+  	</view>
+
+  </view>
+  </view>
+  <view class="div" style="width:730rpx;border-bottom:solid 3px #b3b3b3;display:inline-block;border-radius:2rpx;margin-left:7rpx;margin-right:6rpx">
+  </view>
+  <view class="load-more-wrap">
+        <view class="load-content">
+          <text>没有更多内容了</text>
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/search/search",
+    "pages/coming/coming",
+    "pages/detailmovie/detailmovie"
+  ],
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "backgroundColor": "#fafafa",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/playing_un.png",
+      "selectedIconPath": "images/playing_in.png",
+      "text": "正在热映"
+    },{
+      "pagePath": "pages/search/search",
+      "iconPath": "images/serch_un.png",
+      "selectedIconPath": "images/search_in.png",
+      "text": "搜索"
+    },{
+      "pagePath": "pages/coming/coming",
+      "iconPath": "images/going_un.png",
+      "selectedIconPath": "images/going_in.png",
+      "text": "即将上映"
+    }]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微豆瓣",
+    "navigationBarTextStyle":"black"
+  }
+}
