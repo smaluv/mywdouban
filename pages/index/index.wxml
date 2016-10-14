@@ -1,5 +1,16 @@
 <!--index.wxml-->
-<view class="cotent" style="flex-direction:column;display:block">
+<view class="cotent">
+  <!-- swiper 轮播图 -->
+  <view class="slide" >
+    <swiper indicator-dots="true"
+       autoplay="true" interval="8000" duration="100" style="height:400rpx">
+      <block wx:for="{{swiperM}}" wx:for-item="swiperimage">
+        <swiper-item>
+          <image src="{{swiperimage}}" class="slide-image" style="mode:aspectFit" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
   <view class="header" style="height:80rpx;background:#11cd6e;color:white;font-size:45rpx;text-align:center;line-height:80rpx;display:block">最新豆瓣电影--{{datetime}}
   </view>
   <view wx:for="{{films}}" wx:for-index="key" wx:for-item="value"  class="items" style="height:380rpx;margin-top:5rpx;margin-left:5rpx;margin-right:5rpx;display:block;">

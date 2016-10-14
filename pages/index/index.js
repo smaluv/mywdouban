@@ -8,6 +8,8 @@ Page({
     userInfo: {},
     datetime:'',
     films: [],
+    swiperM:['https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2380677316.jpg',
+    'https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2383975252.jpg'],
   },
   onLoad: function () {
     console.log('onLoad')
@@ -29,9 +31,18 @@ Page({
        'Content-Type': 'application/json'
       },
        success: function(res) {
-         console.log(res.data)
+        console.log(res.data)
+         console.log(res.data.subjects[1].images.large)
+         var swpimg=new Array();
+         for(var i=0;i<4;i++){
+          swpimg[i]=res.data.subjects[i].images.large;
+          console.log(res.data.subjects[i].images.large);
+         }
          that.setData({
-         films:res.data.subjects, 
+            swiperM:swpimg,
+          })
+         that.setData({
+         films:res.data.subjects,
           })
         }
       })
@@ -45,6 +56,9 @@ Page({
     //设置全局的请求访问传递的参数
     app.MovieDetailid=id;
     console.log(id);
+    var aa=this.data.swiperM;
+    console.log(this.data.swiperM);
+    console.log('hahah');
     wx.navigateTo({
       url: '../detailmovie/detailmovie'
     })

@@ -29,8 +29,8 @@
   },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "微豆瓣",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#11cd6e",
+    "navigationBarTitleText": "豆瓣.电影",
+    "navigationBarTextStyle":"white"
   }
 }
