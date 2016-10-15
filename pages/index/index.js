@@ -8,6 +8,7 @@ Page({
     userInfo: {},
     datetime:'',
     films: [],
+    searchTop:[],
     swiperM:['https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2380677316.jpg',
     'https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2383975252.jpg'],
   },
@@ -34,13 +35,27 @@ Page({
         console.log(res.data)
          console.log(res.data.subjects[1].images.large)
          var swpimg=new Array();
+         var searchT=new Array();
          for(var i=0;i<4;i++){
           swpimg[i]=res.data.subjects[i].images.large;
           console.log(res.data.subjects[i].images.large);
          }
+         //获取数据长度
+         console.log(res.data.subjects.length);
+         var item=0;
+         for(var i=0;i<=res.data.subjects.length-1;i++){
+            if(res.data.subjects[i].collect_count>30000){
+              searchT[item]=res.data.subjects[item];
+              item++;
+            }
+         }
          that.setData({
             swiperM:swpimg,
+            searchTop:searchT,
           })
+         var app=getApp();
+         //给全局对象赋值
+         app.searchTop=searchT;
          that.setData({
          films:res.data.subjects,
           })

@@ -1,1 +1,33 @@
-搜索
+<view class="content">
+	<view class="sehinput" style="margin-left:6rpx;margin-right:6rpx;margin-top:10rpx;height:70rpx;border:5rpx solid #11cd6e;border-radius:10rpx;color:#8c8c8c;heigh-line:70pt">
+		<input placeholder-style="width:100%;heigh-line:70pt"  auto-focus/>
+	</view>
+	<view class="sehbtn" style="overflow: hidden;">
+		<button style="margin-top:7rpx;margin-right:10rpx;background:#11cd6e;color:white;float:right;font-size:17pt;height:70rpx;width:280rpx;vertical-align:middle;text-align:center;line-height:70rpx;" bindtap="">豆瓣搜索</button>
+	</view>
+	<view wx:if="{{schTopM}}" style="color:#8a8a8a;margin:20rpx;">24小时热评影片:</view>
+	<block wx:if="{{schTopM}}" wx:for="{{searchTopMovies}}" wx:for-index="key" wx:for-item="schTopMovie">
+	<view style="border:2rpx solid #b3b3b3;border-radius:10rpx;margin:10rpx">
+	<view class="loadlist" style="height:70rpx;width:750rpx;margin-right:15rpx;margin-left:15rpx;margin-top:20rpx;">
+		<text style="float:left;text-align:center;line-height:70rpx;color:#8a8a8a">{{key+1}}. {{schTopMovie.title}}         评分:<view style="color:#ffad43">     {{schTopMovie.rating.average}}</view></text>
+		<image style="float:right;width:32px;height:32px;padding-right:40rpx;" src="../../images/rightup.png"></image>
+	</view>
+	</view>
+	</block>
+	<view class="searchlist"  bindtap="detailmovie" id="{{value.id}}" style="margin-buttom:3rpx;margin-top:20rpx;">
+  	<image class="movieimg" src="{{value.images.medium}}" style="width:300rpx;height:380rpx;float:left"></image>
+  	<view class="movietext" style="background:#f3eade;margin-left:2rpx;width:423rpx;height:380rpx;border-radius:5rpx;float:left;padding-left:15rpx">
+  		<text style="color:#529cd4;font-size:15pt;display:block;margin-top:5rpx;">电影名:{{value.title}}</text>
+  		<text style="color:#ffad43;font-size:13pt;display:block;padding-top:5rpx;">豆瓣评分:{{value.rating.average}}</text>
+  		<view class="mainactor" style="padding-top:5rpx;">
+        <!-- <text style="font-size:13pt;display:block;padding-top:5rpx;">主要演员:{{films.directors[0].name}}</text> -->
+  			<text style="font-size:13pt;display:block;padding-top:5rpx;">主要演员:</text>
+  			<view wx:for="{{value.casts}}" wx:for-index="key" wx:for-item="value" style="font-size:11pt;margin:8rpx;margin-left:60rpx;color:#45b5da">
+         {{key+1}} {{value.name}}
+        </view>
+  		</view>
+  	</view>
+
+  </view>
+ 
+</view>

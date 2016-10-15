@@ -5,7 +5,8 @@
   	<view class="movietext" style="background:#f3eade;margin-left:2rpx;width:393rpx;height:480rpx;border-radius:5rpx;float:left;padding-left:15rpx">
   		<view style="display:block">
   		<text style="float:left;color:#529cd4;font-size:15pt;display:block;">导演:</text>
-  		<text wx:for="{{movie.directors}}" wx:for-index="key" wx:for-item="director" style="color:#529cd4;font-size:10pt;line-height:21pt">{{director.name}}  </text>
+  		<text wx:for="{{movie.directors}}" wx:for-index="key" wx:for-item="director" style="color:#529cd4;font-size:10pt;line-height:21pt">
+         {{director.name}}    </text>
   		</view>
   		<view style="display:block">
   		<text style="color:#ffad43;font-size:13pt;display:block;padding-top:5rpx;">豆瓣评分:{{movie.rating.average}}

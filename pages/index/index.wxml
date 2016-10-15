@@ -30,7 +30,7 @@
 
   </view>
   </view>
-  <view class="div" style="width:730rpx;border-bottom:solid 3px #b3b3b3;display:inline-block;border-radius:2rpx;margin-left:7rpx;margin-right:6rpx">
+  <view class="div" style="width:736rpx;border-bottom:solid 3px #b3b3b3;display:inline-block;border-radius:2rpx;margin-left:7rpx;margin-right:7rpx">
   </view>
   <view class="load-more-wrap">
         <view class="load-content">
