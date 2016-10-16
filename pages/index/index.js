@@ -71,9 +71,9 @@ Page({
     //设置全局的请求访问传递的参数
     app.MovieDetailid=id;
     console.log(id);
-    var aa=this.data.swiperM;
-    console.log(this.data.swiperM);
-    console.log('hahah');
+    // var aa=this.data.swiperM;
+    // console.log(this.data.swiperM);
+    // console.log('hahah');
     wx.navigateTo({
       url: '../detailmovie/detailmovie'
     })

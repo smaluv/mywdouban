@@ -3,7 +3,7 @@
   <!-- swiper 轮播图 -->
   <view class="slide" >
     <swiper indicator-dots="true"
-       autoplay="true" interval="8000" duration="100" style="height:400rpx">
+       autoplay="true" interval="6000" duration="100" style="height:400rpx">
       <block wx:for="{{swiperM}}" wx:for-item="swiperimage">
         <swiper-item>
           <image src="{{swiperimage}}" class="slide-image" style="mode:aspectFit" />
